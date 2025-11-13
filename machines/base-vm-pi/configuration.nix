@@ -1,6 +1,6 @@
 {
-  networking.hostName = "base-vm";
-  nixpkgs.hostPlatform = "x86_64-linux";
+  networking.hostName = "base-vm-pi";
+  nixpkgs.hostPlatform = "aarch64-linux";
 
   services.qemuGuest.enable = true;
 
@@ -10,8 +10,10 @@
     diskSize = 8192;
     graphics = true;
     qemu.options = [
+      "-machine"
+      "virt"
       "-device"
-      "virtio-vga"
+      "virtio-gpu-pci"
     ];
     spiceUSBRedirection.enable = true;
     forwardPorts = [
