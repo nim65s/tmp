@@ -28,6 +28,7 @@
     vim.enable = true;
     git.enable = true;
     sway.enable = true;
+    tmux.enable = true;
   };
 
   services = {
@@ -40,6 +41,11 @@
   };
 
   networking.firewall.allowedTCPPorts = [ 80 ];
+
+  system.autoUpgrade = {
+    enable = true;
+    flake = "github:nim65s/tmp";
+  };
 
   system.stateVersion = "25.05";
 }
