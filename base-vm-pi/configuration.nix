@@ -5,8 +5,8 @@
   services.qemuGuest.enable = true;
 
   virtualisation = {
-    memorySize = 8182;
     cores = 2;
+    memorySize = 8182;
     diskSize = 8192;
     graphics = true;
     qemu.options = [
@@ -21,11 +21,6 @@
         from = "host";
         host.port = 2222;
         guest.port = 22;
-      }
-      {
-        from = "host";
-        host.port = 8080;
-        guest.port = 80;
       }
     ];
   };
